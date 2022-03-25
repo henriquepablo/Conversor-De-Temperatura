@@ -1,11 +1,16 @@
 package application;
 
+import javax.swing.JFrame;
+
 public class Program {
 
 	public static void main(String[] args) {
 		
+		JFrame jf = new JFrame("Conversor");
 		
-		System.out.println("HEllo");
+		
+		jf.setVisible(true);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 
