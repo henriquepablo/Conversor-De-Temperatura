@@ -1,5 +1,6 @@
 package application;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -18,8 +19,13 @@ public class Program {
 		
 		tf.setBounds(80, 50, 90, 20);
 		
+		JButton button = new JButton("Clique");
+		button.setBounds(90, 180, 70, 20);
 		
-		jf.add(label); jf.add(tf);
+		
+		
+		
+		jf.add(label); jf.add(tf); jf.add(button);
 		
 		jf.setSize(275, 275);
 		
