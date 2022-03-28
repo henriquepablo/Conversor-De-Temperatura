@@ -26,19 +26,21 @@ public class Program {
 		button.setBounds(90, 180, 70, 20);
 		
 		JLabel mensagem = new JLabel();
-		mensagem.setBounds(70, 110, 170, 20);
+		mensagem.setBounds(70, 112, 170, 20);
 		
 		button.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if (tf.getText() != null) {
+				if (tf.getText().isEmpty() == false) {
 					double fahrenheit = Double.parseDouble(tf.getText());
 					double celsius = (fahrenheit - 32) * 5 / 9;
 					
-					mensagem.setText(fahrenheit + "°F para celsius:  " + String.format("%.0f", celsius) + " °C");
-					
+					mensagem.setText(fahrenheit + "°F para celsius:  " + String.format("%.0f", celsius) + " °C");	
+				}
+				else {
+					mensagem.setText("O campo está vazio");
 				}
 				
 			}
