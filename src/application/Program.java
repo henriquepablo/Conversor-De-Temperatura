@@ -1,5 +1,8 @@
 package application;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,10 +25,29 @@ public class Program {
 		JButton button = new JButton("Clique");
 		button.setBounds(90, 180, 70, 20);
 		
+		JLabel mensagem = new JLabel();
+		mensagem.setBounds(70, 110, 170, 20);
+		
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if (tf.getText() != null) {
+					double fahrenheit = Double.parseDouble(tf.getText());
+					double celsius = (fahrenheit - 32) * 5 / 9;
+					
+					mensagem.setText(fahrenheit + "°F para celsius:  " + String.format("%.0f", celsius) + " °C");
+					
+				}
+				
+			}
+		});
 		
 		
 		
-		jf.add(label); jf.add(tf); jf.add(button);
+		
+		jf.add(label); jf.add(tf); jf.add(button); jf.add(mensagem);
 		
 		jf.setSize(275, 275);
 		
