@@ -60,6 +60,8 @@ public class Program {
 		
 		jf.setSize(275, 275);
 		
+		jf.setResizable(false);
+		
 		jf.setLayout(null);
 		
 		jf.setLocationRelativeTo(null); // centralizar a janela na tela.
