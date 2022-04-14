@@ -23,26 +23,7 @@ public class Program {
 		
 		JComboBox<String> op = new JComboBox<>(opcoes);
 		
-		JLabel mensagem = new JLabel();
-		
-		op.setBounds(10, 40, 40, 20);
-		
-		mensagem.setBounds(10, 10, 90, 30);
-		
-		op.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				String escolha = op.getItemAt(op.getSelectedIndex());
-				
-				if (escolha.equals("°F")) {
-					mensagem.setText("Faren");
-					
-				}
-				
-			}
-		});
+		JLabel mensagem = new JLabel("Temperatura em Celsius");
 		
 		
 		JButton button1 = new JButton("1");
@@ -70,7 +51,11 @@ public class Program {
 		button.setBounds(70, 330, 50, 50);
 		virgula.setBounds(10, 330, 50, 50);
 		converter.setBounds(130, 330, 50, 50);
-
+		op.setBounds(10, 40, 40, 20);
+		mensagem.setBounds(10, 10, 200, 30);
+		
+		
+		
 		jf.add(button);
 		jf.add(button1);
 		jf.add(button2);
@@ -85,6 +70,29 @@ public class Program {
 		jf.add(converter);
 		jf.add(op);
 		jf.add(mensagem);
+		
+		op.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String escolha = op.getItemAt(op.getSelectedIndex());
+				
+				if (escolha.equals("°F")) {
+					mensagem.setText("Temperatura em Fahrenheit");
+					
+				}
+				
+				else {
+					mensagem.setText("Temperatura em Celsius");
+				}
+				
+			}
+		});
+		
+		
+		
+		
 		
 		/*button.addActionListener(new ActionListener() {
 			
