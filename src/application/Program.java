@@ -23,7 +23,26 @@ public class Program {
 		
 		JComboBox<String> op = new JComboBox<>(opcoes);
 		
+		JLabel mensagem = new JLabel();
+		
 		op.setBounds(10, 40, 40, 20);
+		
+		mensagem.setBounds(10, 10, 90, 30);
+		
+		op.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String escolha = op.getItemAt(op.getSelectedIndex());
+				
+				if (escolha.equals("°F")) {
+					mensagem.setText("Faren");
+					
+				}
+				
+			}
+		});
 		
 		
 		JButton button1 = new JButton("1");
@@ -65,6 +84,7 @@ public class Program {
 		jf.add(virgula);
 		jf.add(converter);
 		jf.add(op);
+		jf.add(mensagem);
 		
 		/*button.addActionListener(new ActionListener() {
 			
