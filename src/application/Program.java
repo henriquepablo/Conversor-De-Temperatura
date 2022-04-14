@@ -23,7 +23,6 @@ public class Program {
 		
 		JLabel mensagem = new JLabel("Celsius");
 		
-	
 		JTextArea ta = new JTextArea();
 		JButton button1 = new JButton("1");
 		JButton button2 = new JButton("2");
@@ -92,9 +91,107 @@ public class Program {
 		});
 		
 		
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("0");
+				
+			}
+		});
+		
+		button1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("1");
+				
+			}
+		});
+		
+		button2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("2");
+				
+			}
+		});
+		
+		button3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("3");
+				
+			}
+		});
+		
+		button4.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("4");
+				
+			}
+		});
+		
+		button5.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("5");
+				
+			}
+		});
+		
+		button6.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("6");
+				
+			}
+		});
+		
+		button7.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("7");
+				
+			}
+		});
+		
+		button8.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("8");
+				
+			}
+		});
+		
+		button9.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append("9");
+				
+			}
+		});
+		
+		virgula.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				ta.append(".");
+				
+			}
+		});
 		
 		
-		
+		// lógica de conversão das temperaturas
 		converter.addActionListener(new ActionListener() {
 			
 			@Override
@@ -109,7 +206,6 @@ public class Program {
 					
 						ta.setText(String.format("%.0f", celsius) + "°C");
 					}
-					
 					
 					else if (ta.getText().isEmpty() == false && escolha.equals("°C")) {
 						double celsius = Double.parseDouble(ta.getText());
@@ -131,7 +227,7 @@ public class Program {
 			
 		
 		
-		jf.setSize(210, 420);
+		jf.setSize(205, 420);
 		
 		jf.setResizable(false);
 		
