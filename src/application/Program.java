@@ -5,12 +5,10 @@ import java.awt.event.ActionListener;
 import java.util.InputMismatchException;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Program {
@@ -24,8 +22,8 @@ public class Program {
 		JComboBox<String> op = new JComboBox<>(opcoes);
 		
 		JLabel mensagem = new JLabel("Temperatura em Celsius");
-		
-		
+	
+		JTextArea ta = new JTextArea();
 		JButton button1 = new JButton("1");
 		JButton button2 = new JButton("2");
 		JButton button3 = new JButton("3");
@@ -39,21 +37,21 @@ public class Program {
 		JButton virgula = new JButton(".");
 		JButton converter = new JButton("cli");
 		
-		button1.setBounds(10, 270 , 50, 50);
-		button2.setBounds(70, 270, 50, 50);
-		button3.setBounds(130, 270, 50, 50);
-		button4.setBounds(10, 210, 50, 50);
-		button5.setBounds(70, 210, 50, 50);
-		button6.setBounds(130, 210, 50, 50);
-		button7.setBounds(10, 150, 50, 50);
-		button8.setBounds(70, 150, 50, 50);
-		button9.setBounds(130, 150, 50, 50);
-		button.setBounds(70, 330, 50, 50);
-		virgula.setBounds(10, 330, 50, 50);
-		converter.setBounds(130, 330, 50, 50);
-		op.setBounds(10, 40, 40, 20);
-		mensagem.setBounds(10, 10, 200, 30);
-		
+		button1.setBounds(15, 270 , 50, 50);
+		button2.setBounds(75, 270, 50, 50);
+		button3.setBounds(135, 270, 50, 50);
+		button4.setBounds(15, 210, 50, 50);
+		button5.setBounds(75, 210, 50, 50);
+		button6.setBounds(135, 210, 50, 50);
+		button7.setBounds(15, 150, 50, 50);
+		button8.setBounds(75, 150, 50, 50);
+		button9.setBounds(135, 150, 50, 50);
+		button.setBounds(75, 330, 50, 50);
+		virgula.setBounds(15, 330, 50, 50);
+		converter.setBounds(135, 330, 50, 50);
+		op.setBounds(10, 90, 40, 20);
+		mensagem.setBounds(10, 60, 200, 30);
+		ta.setBounds(70, 90, 100, 20);
 		
 		
 		jf.add(button);
@@ -70,6 +68,8 @@ public class Program {
 		jf.add(converter);
 		jf.add(op);
 		jf.add(mensagem);
+		jf.add(ta);
+		
 		
 		op.addActionListener(new ActionListener() {
 			
@@ -94,14 +94,14 @@ public class Program {
 		
 		
 		
-		/*button.addActionListener(new ActionListener() {
+		converter.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-					if (tf.getText().isEmpty() == false) {
-						double fahrenheit = Double.parseDouble(tf.getText());
+					if (ta.getText().isEmpty() == false) {
+						double fahrenheit = Double.parseDouble(ta.getText());
 						double celsius = (fahrenheit - 32) * 5 / 9;
 					
 						mensagem.setText(fahrenheit + "°F para celsius:  " + String.format("%.0f", celsius) + " °C");	
@@ -115,7 +115,7 @@ public class Program {
 						mensagem.setText("Digite um número");
 				}
 			}
-		});*/
+		});
 		
 		
 		
@@ -123,7 +123,7 @@ public class Program {
 		
 		//jf.add(label); jf.add(tf); jf.add(button); jf.add(mensagem, SwingConstants.CENTER);
 		
-		jf.setSize(265, 420);
+		jf.setSize(205, 420);
 		
 		jf.setResizable(false);
 		
