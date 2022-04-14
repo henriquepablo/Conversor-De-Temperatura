@@ -21,7 +21,8 @@ public class Program {
 		
 		JComboBox<String> op = new JComboBox<>(opcoes);
 		
-		JLabel mensagem = new JLabel("Temperatura em Celsius");
+		JLabel mensagem = new JLabel("Celsius");
+		
 	
 		JTextArea ta = new JTextArea();
 		JButton button1 = new JButton("1");
@@ -79,12 +80,12 @@ public class Program {
 				String escolha = op.getItemAt(op.getSelectedIndex());
 				
 				if (escolha.equals("°F")) {
-					mensagem.setText("Temperatura em Fahrenheit");
+					mensagem.setText("Fahrenheit");
 					
 				}
 				
 				else {
-					mensagem.setText("Temperatura em Celsius");
+					mensagem.setText("Celsius");
 				}
 				
 			}
@@ -99,12 +100,22 @@ public class Program {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				String escolha = op.getItemAt(op.getSelectedIndex());
+				
 				try {
-					if (ta.getText().isEmpty() == false) {
+					if (ta.getText().isEmpty() == false && escolha.equals("°F")) {
 						double fahrenheit = Double.parseDouble(ta.getText());
 						double celsius = (fahrenheit - 32) * 5 / 9;
 					
-						mensagem.setText(fahrenheit + "°F para celsius:  " + String.format("%.0f", celsius) + " °C");	
+						ta.setText(String.format("%.0f", celsius) + "°C");
+					}
+					
+					
+					else if (ta.getText().isEmpty() == false && escolha.equals("°C")) {
+						double celsius = Double.parseDouble(ta.getText());
+						double fahrenheit = celsius * 9 / 5 + 32;
+						
+						ta.setText(String.format("%.0f", fahrenheit) + "°F");
 					}
 				
 					else {
@@ -117,13 +128,10 @@ public class Program {
 			}
 		});
 		
+			
 		
 		
-		
-		
-		//jf.add(label); jf.add(tf); jf.add(button); jf.add(mensagem, SwingConstants.CENTER);
-		
-		jf.setSize(205, 420);
+		jf.setSize(210, 420);
 		
 		jf.setResizable(false);
 		
